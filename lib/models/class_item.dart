@@ -1,4 +1,4 @@
-class MyItem {
+class ClassItem {
   final int id;
   final String name;
   final String name2;
@@ -13,8 +13,12 @@ class MyItem {
   final String titleImage3;
   final String titleImage4;
   final String titleImage5;
+  final String food1;
+  final List<String> food;
+  final List<String> titleFood;
+  final List<String> detailFood;
 
-  MyItem({
+  ClassItem({
     required this.id,
     required this.name,
     required this.name2,
@@ -29,5 +33,9 @@ class MyItem {
     required this.titleImage3,
     required this.titleImage4,
     required this.titleImage5,
+    required this.food1,
+    required this.food,
+    required this.detailFood,
+    required this.titleFood,
   });
 }

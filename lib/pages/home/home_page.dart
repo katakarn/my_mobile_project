@@ -1,8 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:my_mobile_project/data/data_item.dart';
-import 'package:my_mobile_project/models/my_item.dart';
+import 'package:my_mobile_project/models/class_item.dart';
 
 import '../country_page/country_details_page.dart';
 
@@ -16,8 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //var items = ;
-  List<MyItem> data = DataItem.dataBase;
+  //List<ClassItem> data = DataItem.dataBase;
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +35,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: ListView.builder(
-          itemCount: data.length,
+          itemCount: DataItem.dataBase.length,
           itemBuilder: (BuildContext context, int index) {
-            MyItem item = data[index];
+            ClassItem item = DataItem.dataBase[index];
 
             return Card(
               margin: const EdgeInsets.all(8.0),
@@ -67,15 +64,15 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Text(
                             item.name,
-                            style: TextStyle(fontSize: 25),
+                            style: const TextStyle(fontSize: 25),
                             //style: GoogleFonts.mali(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5.0,
                           ),
                           Text(
                             item.name2,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 15,
                               color: Colors.black54,
                             ),
@@ -94,7 +91,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _handleClickCountry(MyItem dataItem) {
+  void _handleClickCountry(ClassItem dataItem) {
     Navigator.pushNamed(
       context,
       CountryDetailsPage.routeName,
